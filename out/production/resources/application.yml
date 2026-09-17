@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: findex
+
+  datasource:
+    url: jdbc:h2:mem:findexdb;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+openapi:
+  service-key: "kzDH9XRiuJ8QXygiBGG7ue%2B6ATahT5SU76%2B9w4w%2BhB7gVx11y0Y8ni7H02jlc7rgUesO60nOnYNHKEfJFl%2F%2Blw%3D%3D"
+
+batch:
+  sync:
+    cron: "0 0 6 * * *"
